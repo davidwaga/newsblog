@@ -2883,3 +2883,447 @@ Completed 500 Internal Server Error in 245ms (ActiveRecord: 0.2ms | Allocations:
 NameError (undefined local variable or method `page_not_found' for #<PagesController:0x00007fc5d4009aa0>):
   
 app/controllers/pages_controller.rb:5:in `show'
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/davidwaga/railsprojects/newsblog/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2020-02-25 12:57:34 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.2.1) lib/active_record/migration.rb:587:in `check_pending!'
+activerecord (6.0.2.1) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.1) lib/rack/method_override.rb:24:in `call'
+rack (2.1.1) lib/rack/runtime.rb:24:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.1.1) lib/rack/sendfile.rb:113:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2020-02-25 12:57:36 +0300
+  [1m[35m (99.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (114.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20170715073315)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170715073315"]]
+  [1m[35m (80.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePosts (20170724004103)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar, "slug" varchar, "body" text, "snippet" text, "status" integer(2), "published_date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_5b5ddfd518"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_posts_on_user_id" ON "posts" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_posts_on_slug" ON "posts" ("slug")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170724004103"]]
+  [1m[35m (81.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCkeditorAssets (20170724091834)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ckeditor_assets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "data_file_name" varchar NOT NULL, "data_content_type" varchar, "data_file_size" integer, "data_fingerprint" varchar, "type" varchar(30), "width" integer, "height" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_ckeditor_assets_on_type" ON "ckeditor_assets" ("type")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170724091834"]]
+  [1m[35m (82.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTags (20170724151046)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "tags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "slug" varchar)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_tags_on_name" ON "tags" ("name")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_tags_on_slug" ON "tags" ("slug")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170724151046"]]
+  [1m[35m (90.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePostTags (20170724155046)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "post_tags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" integer, "tag_id" integer, CONSTRAINT "fk_rails_fdf74b486b"
+FOREIGN KEY ("post_id")
+  REFERENCES "posts" ("id")
+ ON DELETE CASCADE, CONSTRAINT "fk_rails_c9d8c5063e"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("id")
+ ON DELETE CASCADE)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_post_tags_on_post_id" ON "post_tags" ("post_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_post_tags_on_tag_id" ON "post_tags" ("tag_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170724155046"]]
+  [1m[35m (86.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePages (20170727064155)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "pages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_pages_on_url" ON "pages" ("url")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170727064155"]]
+  [1m[35m (88.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-02-25 09:57:37.766744"], ["updated_at", "2020-02-25 09:57:37.766744"]]
+  [1m[35m (58.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-02-25 12:57:37 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 157)
+Completed 200 OK in 1046ms (Views: 1041.1ms | ActiveRecord: 0.0ms | Allocations: 222451)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-25 12:58:05 +0300
+Processing by SiteController#index as HTML
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 34)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.0ms | Allocations: 10181)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2020-02-25 12:58:19 +0300
+Processing by Admin::UsersController#index as HTML
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.0ms | Allocations: 1716)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-02-25 12:58:19 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/davidwaga/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/davidwaga/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 645)
+  Rendered /home/davidwaga/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 48.3ms | Allocations: 4080)
+Completed 200 OK in 90ms (Views: 66.9ms | ActiveRecord: 1.3ms | Allocations: 23848)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-02-25 12:58:33 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"HFqFzBR7hnGHjcfh13O/X1GmyOc0w5lCUkiF6a6RqqFLxxWefn1vNHdz1YG9TRVO6lihF/5kwC1FUgGGaPka7w==", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.4ms | Allocations: 2140)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"HFqFzBR7hnGHjcfh13O/X1GmyOc0w5lCUkiF6a6RqqFLxxWefn1vNHdz1YG9TRVO6lihF/5kwC1FUgGGaPka7w==", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /home/davidwaga/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/davidwaga/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 134)
+  Rendered /home/davidwaga/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1063)
+Completed 200 OK in 170ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 12617)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-02-25 12:58:38 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"OxYpYF+OPmdY1NoNPeYJt55Gc5SFocppUxwaIHypAbdsi7kyNYjXIqgqyG1X2KOmJbgaZE8GkwZEBp5PusGx+Q==", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.2ms | Allocations: 1793)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"OxYpYF+OPmdY1NoNPeYJt55Gc5SFocppUxwaIHypAbdsi7kyNYjXIqgqyG1X2KOmJbgaZE8GkwZEBp5PusGx+Q==", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /home/davidwaga/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/davidwaga/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 134)
+  Rendered /home/davidwaga/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1057)
+Completed 200 OK in 167ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 11347)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-02-25 12:58:43 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"OTPMfH6VPqndKvWn+UWYctNpdXjy1vvrrnCVXHQoig1urlwuFJPX7C3U58eTezJjaJcciDhxooS5ahEzskA6Qw==", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.2ms | Allocations: 1802)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"OTPMfH6VPqndKvWn+UWYctNpdXjy1vvrrnCVXHQoig1urlwuFJPX7C3U58eTezJjaJcciDhxooS5ahEzskA6Qw==", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /home/davidwaga/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/davidwaga/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 134)
+  Rendered /home/davidwaga/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1057)
+Completed 200 OK in 167ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 11348)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-02-25 12:58:51 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"v8UHTmTizZYMSnmT88kG3sHGKRfk2CfMhe9COIP2aFDoWJccDuQk0/y0a/OZ96zPejhA5y5/fqOS9cZXRZ7YHg==", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.1ms | Allocations: 1798)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"v8UHTmTizZYMSnmT88kG3sHGKRfk2CfMhe9COIP2aFDoWJccDuQk0/y0a/OZ96zPejhA5y5/fqOS9cZXRZ7YHg==", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /home/davidwaga/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/davidwaga/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 134)
+  Rendered /home/davidwaga/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1056)
+Completed 200 OK in 165ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 11345)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-02-25 12:59:15 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/davidwaga/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/davidwaga/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.4ms | Allocations: 213)
+  Rendered /home/davidwaga/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 124)
+  Rendered /home/davidwaga/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 2064)
+Completed 200 OK in 52ms (Views: 49.6ms | ActiveRecord: 0.0ms | Allocations: 13462)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-02-25 12:59:30 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"hV9tRAOIZwy3w3ywsZGywMNqcIJRK8zlf+fmd0kqMusWVABTzheqJZT/NUHsvzJRn8wlFRCIw7Ro/oQZMDxc5w==", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "admin@admin.com"], ["encrypted_password", "$2a$11$UvxtiMqgAdoIxb.nIkrQWeBLqWoTXH9ubm5tQX.BrzTM4GiEx9oc2"], ["created_at", "2020-02-25 09:59:30.969270"], ["updated_at", "2020-02-25 09:59:30.969270"]]
+  [1m[35m (88.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/admin/users
+Completed 302 Found in 262ms (ActiveRecord: 88.7ms | Allocations: 9663)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2020-02-25 12:59:31 +0300
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/users/index.html.erb within layouts/admin
+  Rendered admin/users/_nav.html.erb (Duration: 1.3ms | Allocations: 322)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/admin/users/index.html.erb:23
+  Rendered admin/users/index.html.erb within layouts/admin (Duration: 6.6ms | Allocations: 2306)
+Completed 200 OK in 209ms (Views: 202.9ms | ActiveRecord: 0.5ms | Allocations: 57205)
+
+
+Started GET "/admin/tags" for 127.0.0.1 at 2020-02-25 12:59:37 +0300
+Processing by Admin::TagsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/tags/index.html.erb within layouts/admin
+  Rendered admin/tags/_nav.html.erb (Duration: 0.9ms | Allocations: 312)
+  [1m[36mTag Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/admin/tags/index.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags"[0m
+  ↳ app/views/admin/tags/index.html.erb:41
+  Rendered admin/tags/index.html.erb within layouts/admin (Duration: 22.8ms | Allocations: 2589)
+Completed 200 OK in 64ms (Views: 46.6ms | ActiveRecord: 0.9ms | Allocations: 18249)
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2020-02-25 12:59:38 +0300
+Processing by Admin::PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/posts/index.html.erb within layouts/admin
+  Rendered admin/posts/_nav.html.erb (Duration: 1.3ms | Allocations: 312)
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/admin/posts/index.html.erb:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/admin/posts/index.html.erb:45
+  Rendered admin/posts/index.html.erb within layouts/admin (Duration: 7.0ms | Allocations: 2298)
+Completed 200 OK in 44ms (Views: 25.5ms | ActiveRecord: 0.8ms | Allocations: 18033)
+
+
+Started GET "/admin/posts/new" for 127.0.0.1 at 2020-02-25 12:59:40 +0300
+Processing by Admin::PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/posts/new.html.erb within layouts/admin
+  Rendered admin/posts/_nav.html.erb (Duration: 0.4ms | Allocations: 95)
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" ORDER BY "tags"."name" ASC[0m
+  ↳ app/views/admin/posts/_form.html.erb:49
+  Rendered admin/posts/_form.html.erb (Duration: 38.1ms | Allocations: 12325)
+  Rendered admin/posts/new.html.erb within layouts/admin (Duration: 40.0ms | Allocations: 12866)
+Completed 200 OK in 77ms (Views: 56.1ms | ActiveRecord: 1.7ms | Allocations: 30500)
+
+
+Started GET "/admin/tags" for 127.0.0.1 at 2020-02-25 12:59:55 +0300
+Processing by Admin::TagsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/tags/index.html.erb within layouts/admin
+  Rendered admin/tags/_nav.html.erb (Duration: 0.4ms | Allocations: 96)
+  [1m[36mTag Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/admin/tags/index.html.erb:21
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags"[0m
+  ↳ app/views/admin/tags/index.html.erb:41
+  Rendered admin/tags/index.html.erb within layouts/admin (Duration: 6.9ms | Allocations: 1538)
+Completed 200 OK in 37ms (Views: 32.9ms | ActiveRecord: 0.5ms | Allocations: 13372)
+
+
+Started GET "/admin/tags/new" for 127.0.0.1 at 2020-02-25 12:59:56 +0300
+Processing by Admin::TagsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/tags/new.html.erb within layouts/admin
+  Rendered admin/tags/_nav.html.erb (Duration: 0.3ms | Allocations: 95)
+  Rendered admin/tags/_form.html.erb (Duration: 2.4ms | Allocations: 780)
+  Rendered admin/tags/new.html.erb within layouts/admin (Duration: 4.3ms | Allocations: 1311)
+Completed 200 OK in 35ms (Views: 25.6ms | ActiveRecord: 0.6ms | Allocations: 14850)
+
+
+Started POST "/admin/tags" for 127.0.0.1 at 2020-02-25 13:00:00 +0300
+Processing by Admin::TagsController#create as HTML
+  Parameters: {"authenticity_token"=>"SsrVXKEi6RrWXXGcGhG4mKlDckPHQiH1zQ1x6/3VZ23UfDFs+OjDSxsD1cX9vs6djha3WfMtYGLV7PRdRQyBZg==", "tag"=>{"name"=>"Press Release"}, "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/tags_controller.rb:21:in `create'
+  [1m[36mTag Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" WHERE "tags"."id" IS NOT NULL AND "tags"."slug" = ? LIMIT ?[0m  [["slug", "press-release"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/tags_controller.rb:21:in `create'
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "slug") VALUES (?, ?)[0m  [["name", "Press Release"], ["slug", "press-release"]]
+  ↳ app/controllers/admin/tags_controller.rb:21:in `create'
+  [1m[35m (86.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/tags_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/admin/tags
+Completed 302 Found in 210ms (ActiveRecord: 87.4ms | Allocations: 61456)
+
+
+Started GET "/admin/tags" for 127.0.0.1 at 2020-02-25 13:00:00 +0300
+Processing by Admin::TagsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/tags/index.html.erb within layouts/admin
+  Rendered admin/tags/_nav.html.erb (Duration: 0.3ms | Allocations: 91)
+  [1m[36mTag Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/admin/tags/index.html.erb:21
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" ORDER BY "tags"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/admin/tags/index.html.erb:26
+  Rendered admin/tags/index.html.erb within layouts/admin (Duration: 4.3ms | Allocations: 1603)
+Completed 200 OK in 21ms (Views: 17.0ms | ActiveRecord: 0.7ms | Allocations: 13490)
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2020-02-25 13:00:02 +0300
+Processing by Admin::PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/posts/index.html.erb within layouts/admin
+  Rendered admin/posts/_nav.html.erb (Duration: 0.4ms | Allocations: 96)
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/admin/posts/index.html.erb:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/admin/posts/index.html.erb:45
+  Rendered admin/posts/index.html.erb within layouts/admin (Duration: 8.0ms | Allocations: 1539)
+Completed 200 OK in 35ms (Views: 30.0ms | ActiveRecord: 0.6ms | Allocations: 13374)
+
+
+Started GET "/admin/posts/new" for 127.0.0.1 at 2020-02-25 13:00:04 +0300
+Processing by Admin::PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/posts/new.html.erb within layouts/admin
+  Rendered admin/posts/_nav.html.erb (Duration: 0.3ms | Allocations: 89)
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" ORDER BY "tags"."name" ASC[0m
+  ↳ app/views/admin/posts/_form.html.erb:49
+  Rendered admin/posts/_form.html.erb (Duration: 9.6ms | Allocations: 3899)
+  Rendered admin/posts/new.html.erb within layouts/admin (Duration: 10.6ms | Allocations: 4132)
+Completed 200 OK in 36ms (Views: 31.0ms | ActiveRecord: 0.3ms | Allocations: 15776)
+
+
+Started POST "/admin/posts" for 127.0.0.1 at 2020-02-25 13:00:19 +0300
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"tgpEx9BJxMTU+q0pfnMz4yWaXfbl0NsSZGRiO1u8LrlA09mdw6JprzyMCOtYX1l7AQzJ2kMER+S4Lmi1KrVndQ==", "post"=>{"title"=>"Shopto ", "body"=>"shopto", "snippet"=>"may be", "new_tag_ids"=>["", "1"], "status"=>"2"}, "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/posts_controller.rb:21:in `create'
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."id" IS NOT NULL AND "posts"."slug" = ? LIMIT ?[0m  [["slug", "shopto"], ["LIMIT", 1]]
+  ↳ app/controllers/admin/posts_controller.rb:21:in `create'
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "title", "slug", "body", "snippet", "status", "published_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Shopto "], ["slug", "shopto"], ["body", "shopto"], ["snippet", "may be"], ["status", 2], ["published_date", "2020-02-25 10:00:19.364750"], ["created_at", "2020-02-25 10:00:19.364809"], ["updated_at", "2020-02-25 10:00:19.364809"]]
+  ↳ app/controllers/admin/posts_controller.rb:21:in `create'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "post_tags"."tag_id" FROM "post_tags" WHERE "post_tags"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/models/post.rb:37:in `update_tags'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/post.rb:46:in `block in add_tags'
+  [1m[36mPostTag Create (0.4ms)[0m  [1m[32mINSERT INTO "post_tags" ("post_id", "tag_id") VALUES (?, ?)[0m  [["post_id", 1], ["tag_id", 1]]
+  ↳ app/models/post.rb:46:in `block in add_tags'
+  [1m[35m (117.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/posts_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/admin/posts
+Completed 302 Found in 147ms (ActiveRecord: 118.9ms | Allocations: 13748)
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2020-02-25 13:00:19 +0300
+Processing by Admin::PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/posts/index.html.erb within layouts/admin
+  Rendered admin/posts/_nav.html.erb (Duration: 0.2ms | Allocations: 90)
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/admin/posts/index.html.erb:23
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/admin/posts/index.html.erb:28
+  Rendered admin/posts/index.html.erb within layouts/admin (Duration: 3.3ms | Allocations: 1687)
+Completed 200 OK in 22ms (Views: 18.3ms | ActiveRecord: 0.5ms | Allocations: 13581)
+
+
+Started GET "/admin" for 127.0.0.1 at 2020-02-25 13:00:22 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/dashboard/index.html.erb within layouts/admin
+  Rendered admin/dashboard/index.html.erb within layouts/admin (Duration: 0.4ms | Allocations: 96)
+Completed 200 OK in 30ms (Views: 24.1ms | ActiveRecord: 0.2ms | Allocations: 12193)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-25 13:00:30 +0300
+Processing by SiteController#index as HTML
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 34)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.0ms | Allocations: 10185)
+
+
+Started GET "/blog" for 127.0.0.1 at 2020-02-25 13:00:33 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application_blog
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."status" = ? LIMIT ? OFFSET ?[0m  [["status", 2], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."status" = ? ORDER BY "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["status", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/index.html.erb within layouts/application_blog (Duration: 7.8ms | Allocations: 1777)
+  [1m[36mTag Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" LEFT OUTER JOIN "post_tags" ON "post_tags"."tag_id" = "tags"."id" LEFT OUTER JOIN "posts" ON "posts"."id" = "post_tags"."post_id" WHERE "posts"."status" IN (?, ?) LIMIT ?[0m  [["status", 2], ["status", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application_blog.html.erb:22
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT "tags"."id" AS t0_r0, "tags"."name" AS t0_r1, "tags"."slug" AS t0_r2, "posts"."id" AS t1_r0, "posts"."user_id" AS t1_r1, "posts"."title" AS t1_r2, "posts"."slug" AS t1_r3, "posts"."body" AS t1_r4, "posts"."snippet" AS t1_r5, "posts"."status" AS t1_r6, "posts"."published_date" AS t1_r7, "posts"."created_at" AS t1_r8, "posts"."updated_at" AS t1_r9 FROM "tags" LEFT OUTER JOIN "post_tags" ON "post_tags"."tag_id" = "tags"."id" LEFT OUTER JOIN "posts" ON "posts"."id" = "post_tags"."post_id" WHERE "posts"."status" IN (?, ?) ORDER BY "tags"."name" ASC[0m  [["status", 2], ["status", 3]]
+  ↳ app/views/layouts/application_blog.html.erb:27
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (Duration: 22.8ms | Allocations: 9661)
+Completed 200 OK in 74ms (Views: 71.1ms | ActiveRecord: 1.3ms | Allocations: 19923)
+
+
+Started GET "/blog" for 127.0.0.1 at 2020-02-25 13:00:37 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application_blog
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."status" = ? LIMIT ? OFFSET ?[0m  [["status", 2], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."status" = ? ORDER BY "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["status", 2], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/index.html.erb within layouts/application_blog (Duration: 4.6ms | Allocations: 1448)
+  [1m[36mTag Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" LEFT OUTER JOIN "post_tags" ON "post_tags"."tag_id" = "tags"."id" LEFT OUTER JOIN "posts" ON "posts"."id" = "post_tags"."post_id" WHERE "posts"."status" IN (?, ?) LIMIT ?[0m  [["status", 2], ["status", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application_blog.html.erb:22
+  [1m[35mSQL (0.4ms)[0m  [1m[34mSELECT "tags"."id" AS t0_r0, "tags"."name" AS t0_r1, "tags"."slug" AS t0_r2, "posts"."id" AS t1_r0, "posts"."user_id" AS t1_r1, "posts"."title" AS t1_r2, "posts"."slug" AS t1_r3, "posts"."body" AS t1_r4, "posts"."snippet" AS t1_r5, "posts"."status" AS t1_r6, "posts"."published_date" AS t1_r7, "posts"."created_at" AS t1_r8, "posts"."updated_at" AS t1_r9 FROM "tags" LEFT OUTER JOIN "post_tags" ON "post_tags"."tag_id" = "tags"."id" LEFT OUTER JOIN "posts" ON "posts"."id" = "post_tags"."post_id" WHERE "posts"."status" IN (?, ?) ORDER BY "tags"."name" ASC[0m  [["status", 2], ["status", 3]]
+  ↳ app/views/layouts/application_blog.html.erb:27
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (Duration: 12.9ms | Allocations: 9655)
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 1.1ms | Allocations: 14288)
+
+
+Started GET "/admin" for 127.0.0.1 at 2020-02-25 13:00:47 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/dashboard/index.html.erb within layouts/admin
+  Rendered admin/dashboard/index.html.erb within layouts/admin (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 21ms (Views: 16.6ms | ActiveRecord: 0.2ms | Allocations: 11761)
+
+
