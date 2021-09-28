@@ -3327,3 +3327,223 @@ Processing by Admin::DashboardController#index as HTML
 Completed 200 OK in 21ms (Views: 16.6ms | ActiveRecord: 0.2ms | Allocations: 11761)
 
 
+Started GET "/" for 127.0.0.1 at 2021-09-28 11:39:19 +0300
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 6 pending migrations:
+
+20170715073315_devise_create_users.rb
+20170724004103_create_posts.rb
+20170724091834_create_ckeditor_assets.rb
+20170724151046_create_tags.rb
+20170724155046_create_post_tags.rb
+20170727064155_create_pages.rb
+
+
+):
+  
+activerecord (6.1.4.1) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.4.1) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.4.1) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.4.1) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4.1) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.0) lib/puma/configuration.rb:249:in `call'
+puma (5.5.0) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.0) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.0) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.0) lib/puma/server.rb:447:in `process_client'
+puma (5.5.0) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2021-09-28 11:39:35 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20170715073315)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170715073315"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePosts (20170724004103)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar, "slug" varchar, "body" text, "snippet" text, "status" integer(2), "published_date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_5b5ddfd518"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_posts_on_user_id" ON "posts" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_posts_on_slug" ON "posts" ("slug")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170724004103"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCkeditorAssets (20170724091834)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ckeditor_assets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "data_file_name" varchar NOT NULL, "data_content_type" varchar, "data_file_size" integer, "data_fingerprint" varchar, "type" varchar(30), "width" integer, "height" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_ckeditor_assets_on_type" ON "ckeditor_assets" ("type")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170724091834"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTags (20170724151046)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "tags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "slug" varchar)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_tags_on_name" ON "tags" ("name")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_tags_on_slug" ON "tags" ("slug")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170724151046"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePostTags (20170724155046)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "post_tags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" integer, "tag_id" integer, CONSTRAINT "fk_rails_fdf74b486b"
+FOREIGN KEY ("post_id")
+  REFERENCES "posts" ("id")
+ ON DELETE CASCADE, CONSTRAINT "fk_rails_c9d8c5063e"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("id")
+ ON DELETE CASCADE)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_post_tags_on_post_id" ON "post_tags" ("post_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "index_post_tags_on_tag_id" ON "post_tags" ("tag_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170724155046"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePages (20170727064155)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "pages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_pages_on_url" ON "pages" ("url")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170727064155"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-09-28 08:39:35.595745"], ["updated_at", "2021-09-28 08:39:35.595745"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-09-28 11:39:35 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 1617.2ms | Allocations: 222125)
+Completed 200 OK in 1679ms (Views: 1630.6ms | ActiveRecord: 0.0ms | Allocations: 225656)
+
+
+Started GET "/public/favicon.ico" for 127.0.0.1 at 2021-09-28 11:39:37 +0300
+Processing by PagesController#show as HTML
+  Parameters: {"url"=>"public/favicon.ico"}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/pages_controller.rb:4:in `show'
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."url" = ? ORDER BY "pages"."created_at" DESC LIMIT ?[0m  [["url", "public/favicon.ico"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 3.3ms | Allocations: 6397)
+
+
+  
+NameError (undefined local variable or method `page_not_found' for #<PagesController:0x00000000024e50>):
+  
+app/controllers/pages_controller.rb:5:in `show'
+Started GET "/blog" for 127.0.0.1 at 2021-09-28 11:39:48 +0300
+Processing by PostsController#index as HTML
+Started GET "/public/favicon.ico" for 127.0.0.1 at 2021-09-28 11:39:48 +0300
+Processing by PagesController#show as HTML
+  Parameters: {"url"=>"public/favicon.ico"}
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."url" = ? ORDER BY "pages"."created_at" DESC LIMIT ?[0m  [["url", "public/favicon.ico"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.3ms | Allocations: 4544)
+
+
+  
+NameError (undefined local variable or method `page_not_found' for #<PagesController:0x000000000252b0>):
+  
+app/controllers/pages_controller.rb:5:in `show'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/post.rb:20:in `block in <class:Post>'
+  Rendering layout layouts/application_blog.html.erb
+  Rendering posts/index.html.erb within layouts/application_blog
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."status" = ? LIMIT ? OFFSET ?[0m  [["status", 2], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application_blog (Duration: 3.4ms | Allocations: 1128)
+  [1m[36mTag Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" LEFT OUTER JOIN "post_tags" ON "post_tags"."tag_id" = "tags"."id" LEFT OUTER JOIN "posts" ON "posts"."id" = "post_tags"."post_id" WHERE "posts"."status" IN (?, ?) LIMIT ?[0m  [["status", 2], ["status", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application_blog.html.erb:22
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (Duration: 52.8ms | Allocations: 43100)
+  Rendered layout layouts/application_blog.html.erb (Duration: 84.6ms | Allocations: 57194)
+Completed 200 OK in 250ms (Views: 84.8ms | ActiveRecord: 2.8ms | Allocations: 125749)
+
+
+Started GET "/public/favicon.ico" for 127.0.0.1 at 2021-09-28 11:39:49 +0300
+Processing by PagesController#show as HTML
+  Parameters: {"url"=>"public/favicon.ico"}
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."url" = ? ORDER BY "pages"."created_at" DESC LIMIT ?[0m  [["url", "public/favicon.ico"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.3ms | Allocations: 4409)
+
+
+  
+NameError (undefined local variable or method `page_not_found' for #<PagesController:0x000000000257d8>):
+  
+app/controllers/pages_controller.rb:5:in `show'
+Started GET "/" for 127.0.0.1 at 2021-09-28 11:39:55 +0300
+Started GET "/public/favicon.ico" for 127.0.0.1 at 2021-09-28 11:39:55 +0300
+Processing by PagesController#show as HTML
+  Parameters: {"url"=>"public/favicon.ico"}
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."url" = ? ORDER BY "pages"."created_at" DESC LIMIT ?[0m  [["url", "public/favicon.ico"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.3ms | Allocations: 4313)
+
+
+  
+NameError (undefined local variable or method `page_not_found' for #<PagesController:0x00000000025b48>):
+  
+app/controllers/pages_controller.rb:5:in `show'
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 53.4ms | Allocations: 41992)
+Completed 200 OK in 57ms (Views: 56.1ms | ActiveRecord: 0.0ms | Allocations: 43210)
+
+
+Started GET "/public/favicon.ico" for 127.0.0.1 at 2021-09-28 11:39:55 +0300
+Processing by PagesController#show as HTML
+  Parameters: {"url"=>"public/favicon.ico"}
+  [1m[36mPage Load (0.2ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."url" = ? ORDER BY "pages"."created_at" DESC LIMIT ?[0m  [["url", "public/favicon.ico"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.2ms | Allocations: 4487)
+
+
+  
+NameError (undefined local variable or method `page_not_found' for #<PagesController:0x00000000025eb8>):
+  
+app/controllers/pages_controller.rb:5:in `show'
