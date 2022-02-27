@@ -4193,3 +4193,35 @@ Completed 500 Internal Server Error in 36ms (ActiveRecord: 1.5ms | Allocations: 
 NameError (undefined local variable or method `page_not_found' for #<PagesController:0x000000000271c8>):
   
 app/controllers/pages_controller.rb:5:in `show'
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <main> at /home/davidwaga/rails_projects/newsblog/config/environment.rb:5)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from <main> at /home/davidwaga/rails_projects/newsblog/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2022-02-27 21:01:30 +0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 429)
+  Rendered layout layouts/application.html.erb (Duration: 216.3ms | Allocations: 38530)
+Completed 200 OK in 233ms (Views: 220.5ms | ActiveRecord: 0.0ms | Allocations: 42166)
+
+
+Started GET "/public/favicon.ico" for 127.0.0.1 at 2022-02-27 21:01:30 +0300
+Processing by PagesController#show as HTML
+  Parameters: {"url"=>"public/favicon.ico"}
+  [1m[36mPage Load (0.9ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."url" = ? ORDER BY "pages"."created_at" DESC LIMIT ?[0m  [["url", "public/favicon.ico"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.3ms | Allocations: 6229)
+
+
+  
+NameError (undefined local variable or method `page_not_found' for #<PagesController:0x00000000026e80>):
+  
+app/controllers/pages_controller.rb:5:in `show'
