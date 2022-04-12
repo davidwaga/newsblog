@@ -4225,3 +4225,178 @@ Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.3ms | Allocations: 
 NameError (undefined local variable or method `page_not_found' for #<PagesController:0x00000000026e80>):
   
 app/controllers/pages_controller.rb:5:in `show'
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <main> at /home/davidwaga/rails_projects/newsblog/config/environment.rb:5)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from <main> at /home/davidwaga/rails_projects/newsblog/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2022-04-13 00:11:46 +0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 429)
+  Rendered layout layouts/application.html.erb (Duration: 90.1ms | Allocations: 38429)
+Completed 200 OK in 104ms (Views: 92.7ms | ActiveRecord: 0.0ms | Allocations: 42066)
+
+
+Started GET "/public/favicon.ico" for 127.0.0.1 at 2022-04-13 00:11:47 +0300
+Processing by PagesController#show as HTML
+  Parameters: {"url"=>"public/favicon.ico"}
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."url" = ? ORDER BY "pages"."created_at" DESC LIMIT ?[0m  [["url", "public/favicon.ico"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.1ms | Allocations: 6209)
+
+
+  
+NameError (undefined local variable or method `page_not_found' for #<PagesController:0x00000000026e80>):
+  
+app/controllers/pages_controller.rb:5:in `show'
+Started GET "/public/favicon.ico" for 127.0.0.1 at 2022-04-13 00:11:50 +0300
+Processing by PagesController#show as HTML
+  Parameters: {"url"=>"public/favicon.ico"}
+  [1m[36mPage Load (0.1ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."url" = ? ORDER BY "pages"."created_at" DESC LIMIT ?[0m  [["url", "public/favicon.ico"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `show'
+Started GET "/blog" for 127.0.0.1 at 2022-04-13 00:11:50 +0300
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.1ms | Allocations: 4950)
+
+
+  
+NameError (undefined local variable or method `page_not_found' for #<PagesController:0x00000000027178>):
+  
+app/controllers/pages_controller.rb:5:in `show'
+Processing by PostsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/post.rb:20:in `block in <class:Post>'
+  Rendering layout layouts/application_blog.html.erb
+  Rendering posts/index.html.erb within layouts/application_blog
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."status" = ? LIMIT ? OFFSET ?[0m  [["status", 2], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application_blog (Duration: 3.6ms | Allocations: 2379)
+  [1m[36mTag Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" LEFT OUTER JOIN "post_tags" ON "post_tags"."tag_id" = "tags"."id" LEFT OUTER JOIN "posts" ON "posts"."id" = "post_tags"."post_id" WHERE "posts"."status" IN (?, ?) LIMIT ?[0m  [["status", 2], ["status", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application_blog.html.erb:22
+  Rendering layouts/application.html.erb
+  Rendered layouts/application.html.erb (Duration: 22.0ms | Allocations: 17051)
+  Rendered layout layouts/application_blog.html.erb (Duration: 43.7ms | Allocations: 29075)
+Completed 200 OK in 58ms (Views: 43.7ms | ActiveRecord: 1.9ms | Allocations: 36010)
+
+
+Started GET "/public/favicon.ico" for 127.0.0.1 at 2022-04-13 00:11:50 +0300
+Processing by PagesController#show as HTML
+  Parameters: {"url"=>"public/favicon.ico"}
+  [1m[36mPage Load (0.2ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."url" = ? ORDER BY "pages"."created_at" DESC LIMIT ?[0m  [["url", "public/favicon.ico"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms | Allocations: 4161)
+
+
+  
+NameError (undefined local variable or method `page_not_found' for #<PagesController:0x00000000027588>):
+  
+app/controllers/pages_controller.rb:5:in `show'
+Started GET "/public/favicon.ico" for 127.0.0.1 at 2022-04-13 00:11:52 +0300
+Started GET "/about" for 127.0.0.1 at 2022-04-13 00:11:52 +0300
+Processing by PagesController#show as HTML
+  Parameters: {"url"=>"public/favicon.ico"}
+  [1m[36mPage Load (0.1ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."url" = ? ORDER BY "pages"."created_at" DESC LIMIT ?[0m  [["url", "public/favicon.ico"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.1ms | Allocations: 4065)
+
+
+  
+NameError (undefined local variable or method `page_not_found' for #<PagesController:0x00000000027768>):
+  
+app/controllers/pages_controller.rb:5:in `show'
+Processing by PagesController#show as HTML
+  Parameters: {"url"=>"about"}
+  [1m[36mPage Load (0.1ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."url" = ? ORDER BY "pages"."created_at" DESC LIMIT ?[0m  [["url", "about"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.1ms | Allocations: 4753)
+
+
+  
+NameError (undefined local variable or method `page_not_found' for #<PagesController:0x000000000277e0>):
+  
+app/controllers/pages_controller.rb:5:in `show'
+Started GET "/public/favicon.ico" for 127.0.0.1 at 2022-04-13 00:11:56 +0300
+Processing by PagesController#show as HTML
+  Parameters: {"url"=>"public/favicon.ico"}
+  [1m[36mPage Load (0.1ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."url" = ? ORDER BY "pages"."created_at" DESC LIMIT ?[0m  [["url", "public/favicon.ico"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.1ms | Allocations: 4049)
+
+
+  
+NameError (undefined local variable or method `page_not_found' for #<PagesController:0x00000000027a88>):
+  
+app/controllers/pages_controller.rb:5:in `show'
+Started GET "/" for 127.0.0.1 at 2022-04-13 00:11:57 +0300
+Started GET "/public/favicon.ico" for 127.0.0.1 at 2022-04-13 00:11:57 +0300
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 44)
+Processing by PagesController#show as HTML
+  Parameters: {"url"=>"public/favicon.ico"}
+  [1m[36mPage Load (0.1ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."url" = ? ORDER BY "pages"."created_at" DESC LIMIT ?[0m  [["url", "public/favicon.ico"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.1ms | Allocations: 4120)
+
+
+  
+NameError (undefined local variable or method `page_not_found' for #<PagesController:0x00000000027c40>):
+  
+app/controllers/pages_controller.rb:5:in `show'
+  Rendered layout layouts/application.html.erb (Duration: 137.6ms | Allocations: 96529)
+Completed 200 OK in 139ms (Views: 138.6ms | ActiveRecord: 0.0ms | Allocations: 97445)
+
+
+Started GET "/public/favicon.ico" for 127.0.0.1 at 2022-04-13 00:11:58 +0300
+Processing by PagesController#show as HTML
+  Parameters: {"url"=>"public/favicon.ico"}
+  [1m[36mPage Load (0.2ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."url" = ? ORDER BY "pages"."created_at" DESC LIMIT ?[0m  [["url", "public/favicon.ico"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms | Allocations: 4058)
+
+
+  
+NameError (undefined local variable or method `page_not_found' for #<PagesController:0x00000000027dd0>):
+  
+app/controllers/pages_controller.rb:5:in `show'
+Started GET "/public/favicon.ico" for 127.0.0.1 at 2022-04-13 00:12:06 +0300
+Started GET "/feedback" for 127.0.0.1 at 2022-04-13 00:12:06 +0300
+Processing by PagesController#show as HTML
+  Parameters: {"url"=>"public/favicon.ico"}
+  [1m[36mPage Load (0.1ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."url" = ? ORDER BY "pages"."created_at" DESC LIMIT ?[0m  [["url", "public/favicon.ico"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.1ms | Allocations: 4073)
+
+
+  
+NameError (undefined local variable or method `page_not_found' for #<PagesController:0x00000000027f60>):
+  
+app/controllers/pages_controller.rb:5:in `show'
+Processing by FeedbacksController#new as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2332)
+
+
+  
+NameError (uninitialized constant FeedbacksController::Feedback):
+  
+app/controllers/feedbacks_controller.rb:4:in `new'
+Started GET "/public/favicon.ico" for 127.0.0.1 at 2022-04-13 00:12:10 +0300
+Processing by PagesController#show as HTML
+  Parameters: {"url"=>"public/favicon.ico"}
+  [1m[36mPage Load (0.1ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."url" = ? ORDER BY "pages"."created_at" DESC LIMIT ?[0m  [["url", "public/favicon.ico"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.1ms | Allocations: 4185)
+
+
+  
+NameError (undefined local variable or method `page_not_found' for #<PagesController:0x00000000028280>):
+  
+app/controllers/pages_controller.rb:5:in `show'
